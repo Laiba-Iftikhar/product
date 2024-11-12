@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="search">
+                <h1>All Products</h1>
+                <input type="text" name="" id="find" placeholder="search here...." onkeyup="search()">
+            </div>
+            <div class="product-list">
+                <div class="product">
+                    <img src="asset/bulk-custom-4-h-camp-sign-t-shirt-green-shirts-812598.webp" alt="">
+                    <h3>Green Shirt</h3>
+                    <h4>Stock</h4>
+                </div>
+                <div class="product">
+                    <img src="asset/de2a5a366fe09f943de5617697f4afa2.jpg" alt="">
+                    <h3>Gray shirt</h3>
+                    <h4>stock</del></h4>
+                </div>
+                <div class="product">
+                    <img src="asset/orange-shirts-070jar-1.jpg" alt="">
+                    <h3>Orange shirts</h3>
+                    <h4>outoff Stock</h4>
+                </div>
+                <div class="product">
+                    <img src="asset/Perennial--0044-7-e3ba8f0-perennial.jpg" alt="">
+                    <h3>Red shirts</h3>
+                    <h4>stock</h4>
+                </div>
+                <div class="product">
+                    <img src="asset/purple-shirts-768uzw-1.jpg" alt="">
+                    <h3>Purple shirt</h3>
+                    <h4>Outoff stock</h4>
+                </div>
+                <div class="product">
+                    <img src="asset/Red_Shirts_1898_1900_Museum_of_History.jpg" alt="">
+                    <h3>Red shirt</h3>
+                    <h4>Stock</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- javascript -->
+    <script type="text/javascript">
+        function search() {
+            let filter = document.getElementById('find').value.toUpperCase();
+            let item = document.querySelectorAll('.product');
+            let l = document.getElementsByTagName('h3');
+            for (var i = 0; i <= l.length; i++) {
+                let a = item[i].getElementsByTagName('h3')[0];
+                let value = a.innerHTML || a.innerText || a.textContent;
+                if (value.toUpperCase().indexOf(filter) > -1) {
+                    item[i].style.display = "";
+                }
+                else {
+                    item[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
